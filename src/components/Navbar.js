@@ -173,6 +173,9 @@ const Navbar = () => {
           src={user?.avatar}
           alt={user?.username}
           onClick={toggleUserMenu}
+          onError={(e) => {
+            e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='35' r='20' fill='%23667eea'/%3E%3Cpath d='M20 85 C20 65 80 65 80 85 L80 100 L20 100 Z' fill='%23667eea'/%3E%3C/svg%3E";
+          }}
         />
         
         {showUserMenu && (

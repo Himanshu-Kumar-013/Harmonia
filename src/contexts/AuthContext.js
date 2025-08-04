@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
             id: Date.now(),
             email,
             username: email.split('@')[0],
-            avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${email}`,
+            avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(email)}`,
             createdAt: new Date().toISOString()
           };
           setUser(userData);
@@ -54,7 +54,7 @@ export const AuthProvider = ({ children }) => {
             id: Date.now(),
             email,
             username,
-            avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${email}`,
+            avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(email)}`,
             createdAt: new Date().toISOString()
           };
           setUser(userData);

@@ -78,6 +78,7 @@ function AppContent() {
                 <Playlist />
               </ProtectedRoute>
             } />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </ContentArea>
       </MainContent>
@@ -90,7 +91,7 @@ function App() {
   return (
     <AuthProvider>
       <MusicPlayerProvider>
-        <Router>
+        <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
           <GlobalStyles />
           <AppContent />
         </Router>
